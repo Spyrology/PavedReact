@@ -1,12 +1,12 @@
 import React from 'react';
-import Home from './home/home';
+import Menu from './menu/menu';
 
 class App extends React.Component {
   render() {
     return (
       <div className="container">
       	<p>Hello!</p>
-      	<Home />
+      	<Menu />
       </div>
     );
   }

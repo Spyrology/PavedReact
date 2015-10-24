@@ -1,16 +1,22 @@
 import React from 'react';
 
-/*var data = [{company: "Noodle"},
-						{company: "Thinkful"}
-];*/
-
 class Companies extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
 	render() {
-		/*var companyList = data.map((c) => <li>{c}</li>);*/
+
+		var orgsList = [];
+
+		this.props.orgs.map((org) => {
+			orgsList.push(<li key={org.name}>{org.name}</li>)
+		});
+
 	  return (
       <div className="companies">
       	<ul>
-      		/*{companyList}*/
+      		{orgsList}
       	</ul>
       </div>
 	  );
