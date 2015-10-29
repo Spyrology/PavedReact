@@ -1,0 +1,32 @@
+.header {
+	height: 3em;
+	width: 100%;
+	background-color: rgb(73,108,137);
+}
+
+.navigation {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.logo {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+	margin-left: 2.8em;
+	margin-right: 20em;
+	font-size: 1.4em;
+	width: 10em;
+}
+
+.navigation li {
+	display: inline-block;
+}
+
+.nav-menu {
+	color: black;
+	margin-right: 2em;
+	font-size: 1.2em;
+	text-decoration: none;
+} 
