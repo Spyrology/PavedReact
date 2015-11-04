@@ -1,17 +1,28 @@
 import React from 'react';
+import PosDetails from '../pos-details/pos-details';
 
 class Positions extends React.Component {
 	constructor(){
 	 super();
+	 this.state = { showDetails: false };
+
+	 this.onClick = () => this.setState({ showDetails: !this.state.showDetails });
 	}
 
   render() {
   	return (
   		<div>
-  			<tr>
-  				<p>{this.props.org.position}</p>
-  				<p>{this.props.org.status}</p>
-  			</tr>
+  			<table>
+      		<tbody>
+  					<tr>
+  						<td onClick={this.onClick}>{this.props.org.position}</td>
+  						<td>{this.props.org.status}</td>
+  					</tr>
+  					<tr>
+  						{this.state.showDetails ? <PosDetails /> : null}
+  					</tr>
+  				</tbody>
+  			</table>
 			</div>
   	);
   }
