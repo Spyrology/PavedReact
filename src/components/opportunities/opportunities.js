@@ -3,8 +3,8 @@ import Banner from './banner';
 import Companies from '../companies/companies';
 
 const orgs = [
-	{name: 'Noodle', position: 'Editor', status: 'Open', Requirements: 'Portfolio'},
-	{name: 'Thinkful', position: 'Marketing Coordinator', status: '3 months', Requirements: 'None'}
+	{name: 'Noodle', position: 'Editor', status: 'Open', Requirements: 'Portfolio', Price: '99'},
+	{name: 'Thinkful', position: 'Marketing Coordinator', status: '3 months', Requirements: 'None', Price: '199'}
 ];
 
 class Opportunities extends React.Component {

@@ -7,7 +7,7 @@ class PosDetails extends React.Component {
 
 	render() {
 	  return (
-      <td>test</td>
+      <td>test details</td>
 	  );
 	}
 }

@@ -16,8 +16,6 @@ class Companies extends React.Component {
 			);
 			orgsList.push(<Positions org={org} key={org.position} />
 			);
-			orgsList.push(<PosDetails requirement={org.requirement} key={org.name} />
-			);
 		});
 
 	  return (
