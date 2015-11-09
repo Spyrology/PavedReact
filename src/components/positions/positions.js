@@ -19,7 +19,7 @@ class Positions extends React.Component {
   						<td>{this.props.org.status}</td>
   					</tr>
   					<tr>
-  						{this.state.showDetails ? <PosDetails /> : null}
+  						{this.state.showDetails ? <PosDetails org={this.props.org} /> : null}
   					</tr>
   				</tbody>
   			</table>

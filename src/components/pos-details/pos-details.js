@@ -7,7 +7,7 @@ class PosDetails extends React.Component {
 
 	render() {
 	  return (
-      <td>test details</td>
+      <td>{this.props.org.requirements}</td>
 	  );
 	}
 }
