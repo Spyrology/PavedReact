@@ -1,27 +1,24 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import Banner from './banner';
 import Companies from '../companies/companies';
 
-const orgs = [
-	{name: 'Noodle', position: 'Editor', status: 'Open', Requirements: 'Portfolio', Price: '99'},
-	{name: 'Thinkful', position: 'Marketing Coordinator', status: '3 months', Requirements: 'None', Price: '199'}
-];
+export const Opportunities = React.createClass({
 
-class Opportunities extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
-	render() {
+	render: function() {
 	  return (
       <div className="opportunities">
       	<Banner />
-      	<Companies
-      		orgs={orgs}
-      	/>
+      	<Companies orgs={this.props.orgs} />
       </div>
 	  );
 	}
+});
+
+function mapStateToProps(state) {
+  return {
+    orgs: state.get('orgs')
+  };
 }
 
-export default Opportunities;
+export const OpportunitiesContainer = connect(mapStateToProps)(Opportunities);
