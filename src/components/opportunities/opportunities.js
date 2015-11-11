@@ -16,6 +16,7 @@ export const Opportunities = React.createClass({
 });
 
 function mapStateToProps(state) {
+	console.log("goo");
   return {
     orgs: state.get('orgs')
   };

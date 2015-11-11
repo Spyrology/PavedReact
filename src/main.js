@@ -6,19 +6,32 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import reducer from './reducers/reducer';
 import routes from './routes';
+import oppsSource from './data/opportunities';
 
 let history = createBrowserHistory();
 
 const store = createStore(reducer);
-store.dispatch({
-  type: 'SET_STATE',
-  state: {
-    orgs: [
-			{name: 'Noodle', position: 'Editor', status: 'Open', requirements: 'Portfolio', price: '99'},
-			{name: 'Thinkful', position: 'Marketing Coordinator', status: '3 months', requirements: 'None', price: '199'}
-		]
-  }
+
+var oppArray = [];
+
+console.log("zoo");
+
+oppsSource.getOpps()
+  .then((dataObj) => {
+  	dataObj.data.forEach(function(opp){
+  		oppArray.push(opp.opportunities);
+  	});
+  console.log("woo");
+  console.log(oppArray);
+	store.dispatch({
+	 	type: 'SET_STATE',
+	  state: {
+	    orgs: oppArray
+	  }
+	});
 });
+
+console.log("boo");
 
 ReactDOM.render((
 	<Provider store={store}>
