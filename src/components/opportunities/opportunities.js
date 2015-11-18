@@ -19,7 +19,7 @@ function mapStateToProps(state) {
 	console.log("goo");
   return {
     orgs: state.get('orgs')
-  };
+	};
 }
 
 export const OpportunitiesContainer = connect(mapStateToProps)(Opportunities);
