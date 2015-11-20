@@ -24,9 +24,11 @@ var asyncDispatch = function (oppArray) {
 	return dispatch => {
 		return oppsSource.getOpps().then(
 			(dataObj) => {
-		  	dataObj.data.forEach(function(opp){
+				oppArray = dataObj.data
+				console.log(oppArray);
+		  	/*dataObj.data.forEach(function(opp){
 		  		oppArray.push(opp.opportunities);
-		 		});
+		 		});*/
 			dispatch({
 			 	type: 'SET_STATE',
 			  state: {
@@ -39,12 +41,22 @@ var asyncDispatch = function (oppArray) {
 
 store.dispatch(asyncDispatch(oppArray));
 
-store.subscribe(function() {
+/*store.dispatch({
+   type: 'SET_STATE',
+   state: {
+ 		orgs: [
+ 			{name: 'Noodle', position: 'Editor', status: 'Open', Requirements: 'Portfolio', Price: '99'},
+ 			{name: 'Thinkful', position: 'Marketing Coordinator', status: '3 months', Requirements: 'None', Price: '199'}
+		]
+   }
+ });*/
+
+/*store.subscribe(function() {
   console.log(store.getState());
   console.log("coo");
-});
+});*/
 
-console.log(oppArray);
+/*console.log(store.getState());*/
 console.log("boo");
 
 ReactDOM.render((

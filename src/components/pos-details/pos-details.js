@@ -1,4 +1,5 @@
 import React from 'react';
+// import FileButtons from '../file-buttons/file-buttons';
 
 class PosDetails extends React.Component {
 	constructor(){
@@ -7,7 +8,7 @@ class PosDetails extends React.Component {
 
 	render() {
 	  return (
-      <td>{this.props.org.requirements}</td>
+      <td><button>I button</button></td>
 	  );
 	}
 }

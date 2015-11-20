@@ -19,3 +19,16 @@
 .companies-container {
 	color: black;
 }
+
+button {
+	height: 5em;
+	width: 5em;
+	background: white;
+	border: solid black .1em;
+}
+
+button:hover {
+	background: rgb(72,145,115);
+	border: green;
+	color: white;
+}
