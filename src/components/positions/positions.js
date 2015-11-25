@@ -10,17 +10,24 @@ class Positions extends React.Component {
 	}
 
   render() {
+
+    var oppList = [];
+
+    this.props.org.opportunities.forEach((obj) => {
+      oppList.push(<td className="position-names" onClick={this.onClick}>{obj.position}</td>
+      );
+      oppList.push(<td className="timeestimate">{obj.timeestimate}</td>
+      );
+    });
+
   	return (
   		<div>
   			<table>
       		<tbody>
   					<tr>
-  						<td onClick={this.onClick}>{this.props.org.position}</td>
-  						<td>{this.props.org.status}</td>
+  						{oppList}
   					</tr>
-  					<tr>
-  						{this.state.showDetails ? <PosDetails org={this.props.org} /> : null}
-  					</tr>
+  					{this.state.showDetails ? <PosDetails org={this.props.org} /> : null}
   				</tbody>
   			</table>
 			</div>
