@@ -13,15 +13,19 @@ class Companies extends React.Component {
 		var orgsList = [];
 
 		this.props.orgs.toJS().map((org) => {
-			orgsList.push(<h3 key={org.name}>{org.name}</h3>
+			orgsList.push(<th className="company-name" key={org.name}>{org.name}</th>
 			);
 			orgsList.push(<Positions org={org} key={org.position} />
 			);
 		});
 
 	  return (
-      <div className="companies-container">
-      	{orgsList}
+      <div className="row">
+      	<div className="col-md-8 col-md-offset-2">
+	      	<table className="table">
+	      		{orgsList}
+	      	</table>
+	      </div>
       </div>
 	  );
 	}

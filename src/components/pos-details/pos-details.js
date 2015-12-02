@@ -8,27 +8,17 @@ class PosDetails extends React.Component {
 
 	render() {
 
-		var posPrice = [];
-		var posReqs = [];
+		var posDetails = [];
 
     this.props.org.opportunities.forEach((obj) => {
-      posPrice.push(obj.price
-      );
-      posReqs.push(obj.requirements
+      posDetails.push(<tbody><tr><td>{obj.price}</td></tr><tr><td>{obj.requirements}</td></tr></tbody>
       );
     });
 
 	  return (
 	  	<tbody>
-	  	<tr>
-	  		<td>{posPrice}
-	  		</td>
-	  	</tr>
-	  	<tr>
-	  		<td>{posReqs}
-	  		</td>
-	  	</tr>
-	  	</tbody>
+	  		{posDetails}
+		  </tbody>
 	  );
 	}
 }
