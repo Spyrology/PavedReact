@@ -4,6 +4,74 @@
 		"selected_items":
 		[
 			[
+				"pos",
+				"posDetailsComponent"
+			],
+			[
+				"banner",
+				"banner"
+			],
+			[
+				"tet",
+				"text-align"
+			],
+			[
+				"na",
+				"navbar"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"nav",
+				"nav"
+			],
+			[
+				"post",
+				"posDetails"
+			],
+			[
+				"time",
+				"timeestimate"
+			],
+			[
+				"opp",
+				"oppArray"
+			],
+			[
+				"app",
+				"applyMiddleware"
+			],
+			[
+				"map",
+				"mapDispatchToProps"
+			],
+			[
+				"log",
+				"logArrayElements"
+			],
+			[
+				"name",
+				"name"
+			],
+			[
+				"Po",
+				"PosDetails"
+			],
+			[
+				"compo",
+				"components"
+			],
+			[
+				"orgs",
+				"orgsList"
+			],
+			[
 				"Opo",
 				"OpportunitiesDetails"
 			],
@@ -42,10 +110,6 @@
 			[
 				"S",
 				"S3_BUCKET"
-			],
-			[
-				"text",
-				"text-align"
 			],
 			[
 				"v",
@@ -150,14 +214,6 @@
 			[
 				"is",
 				"isLoggedIn"
-			],
-			[
-				"opp",
-				"opportunities"
-			],
-			[
-				"log",
-				"log-in"
 			],
 			[
 				"sign",
@@ -340,10 +396,6 @@
 				"clearInput"
 			],
 			[
-				"tex",
-				"text-align"
-			],
-			[
 				"se",
 				"section	Tag"
 			],
@@ -380,42 +432,34 @@
 	"buffers":
 	[
 		{
-			"file": "src/components/companies/companies.js",
-			"settings":
-			{
-				"buffer_size": 348,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "src/components/opportunities/opportunities.js",
 			"settings":
 			{
-				"buffer_size": 289,
+				"buffer_size": 523,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/components/app.js",
+			"file": "src/components/companies/companies.js",
 			"settings":
 			{
-				"buffer_size": 239,
+				"buffer_size": 706,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/main.js",
+			"file": "src/components/positions/positions.js",
 			"settings":
 			{
-				"buffer_size": 489,
+				"buffer_size": 682,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/components/home/home.js",
+			"file": "src/components/pos-details/pos-details.js",
 			"settings":
 			{
-				"buffer_size": 282,
+				"buffer_size": 383,
 				"line_ending": "Windows"
 			}
 		}
@@ -427,10 +471,26 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 55.0,
-		"last_filter": "babel",
+		"height": 588.0,
+		"last_filter": "css",
 		"selected_items":
 		[
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"babe",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"bab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"scss",
+				"Set Syntax: CSS"
+			],
 			[
 				"babel",
 				"Set Syntax: JavaScript (Babel)"
@@ -442,10 +502,6 @@
 			[
 				"package control",
 				"Package Control: Add Repository"
-			],
-			[
-				"scss",
-				"Set Syntax: CSS"
 			],
 			[
 				"install",
@@ -487,36 +543,69 @@
 	"expanded_folders":
 	[
 		"/C/Users/Spyro/Documents/GitHub/React/PavedReact",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/public",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/public/css",
 		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/actions",
 		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components",
 		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/companies",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/file-buttons",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/header",
 		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/home",
-		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/opportunities"
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/opportunities",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/pos-details",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/positions",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/styles"
 	],
 	"file_history":
 	[
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/styles/main.scss",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/styles/companies.scss",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/routes.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/styles/banner.scss",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/opportunities/banner.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/header/header.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/styles/header.scss",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/styles/opportunities-page.scss",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/opportunities/opportunities.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/app.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/companies/companies.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/main.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/positions/positions.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/pos-details/pos-details.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/public/css/main.css",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/reducers/reducer.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/public/css/bootstrap.min.css",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/public/index.html",
+		"/C/Users/Spyro/Desktop/bootstrap-3.3.6-dist/bootstrap-3.3.6-dist/css/bootstrap.css",
+		"/C/Users/Spyro/AppData/Local/Temp/Temp1_bootstrap-3.3.6-dist.zip/bootstrap-3.3.6-dist/css/bootstrap.css",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/data/opportunities.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/index.js",
+		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/bin/www",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/file-buttons/file-buttons",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/actions/actions.js",
+		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/routes/index.js",
+		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/app.js",
+		"/C/Users/Spyro/Documents/GitHub/React/simplest-redux-example/index.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/package.json",
+		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/models/opportunities.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/home/home.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/about/about.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/menu/menu.js",
+		"/C/Users/Spyro/Documents/GitHub/React/ReactStarterV/src/components/app.js",
+		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/PavedReact.sublime-project",
 		"/C/Users/Spyro/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/Spyro/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
-		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/package.json",
-		"/C/Users/Spyro/Documents/GitHub/React/ReactStarterV/src/components/app.js",
 		"/C/Users/Spyro/Documents/GitHub/React/ReactStarterV/src/components/about/about.js",
 		"/C/Users/Spyro/Documents/GitHub/React/ReactStarterV/src/components/docs/docs.js",
 		"/C/Users/Spyro/Documents/GitHub/React/ReactStarterV/src/routes.js",
 		"/C/Users/Spyro/Documents/GitHub/React/ReactStarterV/src/components/contact/contact.js",
 		"/C/Users/Spyro/Documents/GitHub/React/ReactStarterV/src/components/docs/current-doc.js",
-		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/styles/main.scss",
-		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/app.js",
-		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/opportunities/opportunities.js",
-		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/companies/companies.js",
-		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/home/home.js",
-		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/main.js",
 		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/home/home.css",
 		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/.gitignore",
 		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/public/js/bundle.js",
-		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/index.js",
 		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/npm-debug.log",
 		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/src/components/home.js",
-		"/C/Users/Spyro/Documents/GitHub/React/PavedReact/public/index.html",
 		"/C/Users/Spyro/Documents/GitHub/React/ReactStarterV/src/main.js",
 		"/C/Users/Spyro/Documents/GitHub/React/ReactStarterV/src/components/home.js",
 		"/C/Users/Spyro/Documents/GitHub/React/ReactStarterV/src/components/docs.js",
@@ -564,7 +653,6 @@
 		"/C/Users/Spyro/Documents/GitHub/React/ReactStarter/react-0.13.3/examples/README.md",
 		"/C/Users/Spyro/Documents/GitHub/React/react-tutorial/public/index.html",
 		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/layouts/layout.hbs",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/routes/index.js",
 		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/reacttest.hbs",
 		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/lib/amazon.js",
 		"/C/Users/Spyro/Documents/GitHub/Node.js/2015-02-13-React/excercises/4-props-v-state/app.js",
@@ -585,9 +673,7 @@
 		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/config/passport.js",
 		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/public/stylesheets/evaluation.css",
 		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/evaluation.hbs",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/app.js",
 		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/models/users.js",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/models/opportunities.js",
 		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/lib/stripe.js",
 		"/C/Users/Spyro/AppData/Local/Temp/ReleaseNotes_Win7_1RTMSDK.Htm",
 		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/node_modules/passport-local/lib/strategy.js",
@@ -600,33 +686,11 @@
 		"/C/Users/Spyro/.aws/credentials",
 		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/.aws/credentials",
 		"/C/Users/Spyro/Desktop/aws-lib-0.2.1/aws-lib-0.2.1/examples/as.js",
-		"/C/Users/Spyro/Desktop/aws-lib-0.2.1/aws-lib-0.2.1/examples/ec2.js",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/public/stylesheets/index.css",
-		"/C/Users/Spyro/Documents/GitHub/Carpe-Diem/js/app.js",
-		"/C/Users/Spyro/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/focused.hbs",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/deliverable.hbs",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/routes/users.js",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/public/stylesheets/admin.css",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/node_modules/express/lib/express.js",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/sign-up.hbs",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/log-in.hbs",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/emails.js",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/landing-page.hbs",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/layouts/landing-page.hbs",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/.gitignore",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/emails.hbs",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/public/stylesheets/main.css",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/inventory-app/app.js",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/layout.hbs",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/views/error.hbs",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/styles/payment-form.css",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/styles/main.css",
-		"/C/Users/Spyro/Documents/GitHub/Node.js/Paved/styles/focused.css"
+		"/C/Users/Spyro/Desktop/aws-lib-0.2.1/aws-lib-0.2.1/examples/ec2.js"
 	],
 	"find":
 	{
-		"height": 50.0
+		"height": 54.0
 	},
 	"find_in_files":
 	{
@@ -716,44 +780,16 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/components/companies/companies.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 348,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								61,
-								61
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/babel-sublime/JavaScript (Babel).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "src/components/opportunities/opportunities.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 289,
+						"buffer_size": 523,
 						"regions":
 						{
 						},
@@ -766,30 +802,32 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/babel-sublime/JavaScript (Babel).tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "src/components/app.js",
+					"buffer": 1,
+					"file": "src/components/companies/companies.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 239,
+						"buffer_size": 706,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								342,
+								342
 							]
 						],
 						"settings":
@@ -804,48 +842,50 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "src/main.js",
+					"buffer": 2,
+					"file": "src/components/positions/positions.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 489,
+						"buffer_size": 682,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								575,
+								575
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 102.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "src/components/home/home.js",
+					"buffer": 3,
+					"file": "src/components/pos-details/pos-details.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 282,
+						"buffer_size": 383,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								86,
-								86
+								301,
+								301
 							]
 						],
 						"settings":
@@ -853,10 +893,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 102.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -864,7 +904,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 38.0
+		"height": 42.0
 	},
 	"input":
 	{
@@ -901,7 +941,7 @@
 	"project": "PavedReact.sublime-project",
 	"replace":
 	{
-		"height": 72.0
+		"height": 80.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -939,7 +979,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 338.0,
+	"side_bar_width": 313.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

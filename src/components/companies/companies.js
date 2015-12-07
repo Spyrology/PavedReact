@@ -13,9 +13,9 @@ class Companies extends React.Component {
 		var orgsList = [];
 
 		this.props.orgs.toJS().map((org) => {
-			orgsList.push(<th className="company-name" key={org.name}>{org.name}</th>
+			orgsList.push(<th className="company-name" key={org._id + org.name}>{org.name}</th>
 			);
-			orgsList.push(<Positions org={org} key={org.position} />
+			orgsList.push(<Positions org={org} key={org._id} />
 			);
 		});
 
