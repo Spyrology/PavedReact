@@ -7,7 +7,7 @@ export const Opportunities = React.createClass({
 
 	render: function() {
 	  return (
-      <div className="opportunities">
+      <div className="container opportunities">
       	<Banner />
       	<Companies orgs={this.props.orgs} />
       </div>

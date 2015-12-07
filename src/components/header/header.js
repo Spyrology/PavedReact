@@ -8,14 +8,14 @@ class Header extends React.Component {
 
   render() {
   	return (
-  		<div className="header">
-		  	<nav className="navigation">
+  		<div className="row">
+	  		<nav className="navbar navbar-custom">
 					<ul>
-						<li className="logo">
-							<IndexLink className="logo" to='/'>PAVED</IndexLink>
+						<li className="col-md-6 navbar-left">
+							<IndexLink to='/'><span className="navbar-brand">PAVED</span></IndexLink>
 						</li>
-						<li className="nav-menu">
-							<Link className="nav-menu" to='/opportunities'>OPPORTUNITIES</Link>
+						<li className="col-md-6 navbar-right">
+							<Link to='/opportunities'><span className="navbar-nav">OPPORTUNITIES</span></Link>
 						</li>
 					</ul>
 				</nav>

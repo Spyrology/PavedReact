@@ -5,32 +5,25 @@ class Positions extends React.Component {
 	constructor(){
 	 super();
 	 this.state = { showDetails: false };
-
+ 
 	 this.onClick = () => this.setState({ showDetails: !this.state.showDetails });
-	}
+  }
 
   render() {
 
     var oppList = [];
 
     this.props.org.opportunities.forEach((obj) => {
-      oppList.push(<td className="position-names" onClick={this.onClick}>{obj.position}</td>
+      oppList.push(<tr key={obj._id + obj.position}><td className="position-names" onClick={this.onClick}>{obj.position}</td><td className="timeestimate">{obj.timeestimate}</td></tr>
       );
-      oppList.push(<td className="timeestimate">{obj.timeestimate}</td>
+      oppList.push(<PosDetails key={obj._id} showDetails={this.state.showDetails} details={obj} />
       );
     });
 
   	return (
-  		<div>
-  			<table>
-      		<tbody>
-  					<tr>
-  						{oppList}
-  					</tr>
-  					{this.state.showDetails ? <PosDetails org={this.props.org} /> : null}
-  				</tbody>
-  			</table>
-			</div>
+  		<tbody>
+				{oppList}
+			</tbody>
   	);
   }
 }
