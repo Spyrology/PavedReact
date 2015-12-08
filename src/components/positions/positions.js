@@ -8,7 +8,10 @@ class Positions extends React.Component {
    
   //this.state.showDetails = this.props.org.opportunities;
 
-    this.onClick = (k) => this.setState({ showDetails: !this.state.showDetails[k] });
+    this.onClick = (k) => {
+      this.state.showDetails[k] = !this.state.showDetails[k];
+      this.setState({ showDetails: this.state.showDetails });
+    }
   }
 
   componentDidMount() {
