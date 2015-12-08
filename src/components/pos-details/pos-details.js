@@ -9,7 +9,7 @@ class PosDetails extends React.Component {
 	render() {
 	  return (
 			<tr>
-			{this.props.showDetails ? 
+			{this.props.showDetails.k ? 
 	  		<td>
 		  		<div>
 		  			{this.props.details.price}
