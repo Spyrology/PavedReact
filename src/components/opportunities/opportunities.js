@@ -1,24 +1,42 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import Banner from './banner';
-import Companies from '../companies/companies';
+import OppDetails from '../opp-details/opp-details';
 
-export const Opportunities = React.createClass({
+class Opportunities extends React.Component {
+  constructor(){
+    super();
+    this.state = { showDetails: {} };
 
-	render: function() {
-	  return (
-      <div className="container opportunities">
-      	<Banner />
-      	<Companies orgs={this.props.orgs} />
-      </div>
-	  );
-	}
-});
+    this.onClick = (k) => {
+      this.state.showDetails[k] = !this.state.showDetails[k];
+      this.setState({ showDetails: this.state.showDetails });
+    }
+  }
 
-function mapStateToProps(state) {
-  return {
-    orgs: state.get('orgs')
-	};
+  componentDidMount() {
+    const theOpps = Object.keys(this.props.org.opportunities);
+    console.log(theOpps);
+    theOpps.forEach((key) => {
+      this.state.showDetails[key] = true;
+    });
+  }
+
+  render() {
+
+    var oppList = [];
+
+    Object.keys(this.props.org.opportunities).forEach((k) => {
+      oppList.push(<tr key={this.props.org.opportunities[k]._id + this.props.org.opportunities[k].position}><td className="position-names" onClick={this.onClick}>{this.props.org.opportunities[k].position}</td><td className="timeestimate">{this.props.org.opportunities[k].timeestimate}</td></tr>
+      );
+      oppList.push(<OppDetails key={this.props.org.opportunities[k]._id} kay={k} showDetails={this.state.showDetails} details={this.props.org.opportunities[k]} />
+      );
+    });
+
+  	return (
+  		<tbody>
+				{oppList}
+			</tbody>
+  	);
+  }
 }
 
-export const OpportunitiesContainer = connect(mapStateToProps)(Opportunities);
+export default Opportunities;

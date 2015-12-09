@@ -22,7 +22,6 @@ var asyncDispatch = function (oppArray) {
 		return oppsSource.getOpps().then(
 			(dataObj) => {
 				oppArray = dataObj.data
-				console.log(oppArray);
 			dispatch({
 			 	type: 'SET_STATE',
 			  state: {
