@@ -1,8 +1,19 @@
-export const SET_STATE = 'SET_STATE'
+//action types
+export const SET_DETAILS = 'SET_DETAILS'
+export const TOGGLE_DETAILS = 'TOGGLE_DETAILS'
 
-export function setState(state) {
-  return {
-    type: 'SET_STATE',
-    state
-  };
+//action creators
+
+export function setDetails(showDetails) {
+	return {
+		type: 'SET_DETAILS',
+		showDetails
+	}
+}
+
+export function toggleDetails(index) {
+	return {
+		type: 'TOGGLE_DETAILS',
+		index
+	};
 }

@@ -25,7 +25,9 @@ var asyncDispatch = function (oppArray) {
 			dispatch({
 			 	type: 'SET_STATE',
 			  state: {
-			    orgs: oppArray
+			    orgs: oppArray,
+			    showDetails: [
+			    ]
 			  }
 			});
 		});
@@ -33,6 +35,8 @@ var asyncDispatch = function (oppArray) {
 };
 
 store.dispatch(asyncDispatch(oppArray));
+
+export { store }
 
 ReactDOM.render((
 	<Provider store={store}>
