@@ -9,7 +9,7 @@ class OppDetails extends React.Component {
 	render() {
 	  return (
 			<tr>
-			{this.props.showDetails.k ? 
+			{this.props.showDetails.index ? 
 	  		<td>
 		  		<div>
 		  			{this.props.details.price}

@@ -13,27 +13,24 @@ export default function(state = Map(), action) {
     	state, action.state
     );
 
-  case 'SET_DETAILS':
-  	return Object.assign([], state, {
-  		showDetails: [
-  		...state.showDetails(action.showDetails),
-  		Object.assign([], state.showDetails[action.showDetails])
-  		]
-  		//we need to access the showDetails part of the state tree,
-  		//and give it the showDetails paylod 
-  	})
-
-  case 'TOGGLE_DETAILS':
-  	return Object.assign({}, state, {
-  		showDetails: [
-  			...state.showDetails.slice(action.index),
-  			Object.assign({}, state.showDetails[action.index], {
-  				index: true
-  			})
-  		]
-  	})
-
   default: 
   	return state;
+	}
 }
+
+export function oppDetails(state = [], action) {
+  switch (action.type) {
+  case 'SET_DETAILS':
+  	return [
+  		state, action.showDetails
+  	] 
+  case 'TOGGLE_DETAILS':
+  	return [
+  		state, action.toggleDetails(index)
+  	]
+  default:
+  	return state
+  }
 }
+
+ 
