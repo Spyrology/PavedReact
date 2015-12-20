@@ -16,10 +16,10 @@ export const OpportunitiesPage = React.createClass({
 	}
 });
 
-function select(state) {
+function mapStateToProps(state) {
   return {
-    orgs: store.getState()
+    orgs: store.getState('orgs')
 	};
 }
 
-export const OpportunitiesPageContainer = connect(select)(OpportunitiesPage);
+export const OpportunitiesPageContainer = connect(mapStateToProps)(OpportunitiesPage);

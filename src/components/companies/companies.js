@@ -10,10 +10,9 @@ class Companies extends React.Component {
 
 	render() {
 
-		var orgsList = [];
-
 		console.log(this.props);
-		console.log('in companies');
+
+		var orgsList = [];
 
 		this.props.orgs.orgs.map((org) => {
 			orgsList.push(<th className="company-name" key={org._id + org.name}>{org.name}</th>
@@ -21,8 +20,6 @@ class Companies extends React.Component {
 			orgsList.push(<Opportunities org={org} key={org._id} />
 			);
 		});
-
-		console.log(orgsList);
 
 	  return (
       <div className="row">

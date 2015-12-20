@@ -8,16 +8,32 @@ import { TOGGLE_DETAILS, SET_DETAILS } from '../actions/actions';
 }*/
 
 export default function(state = [], action) {
-  switch (action.type) {
+  switch (action.type) {  
   case 'SET_STATE':
     return (
     	state, action.state
     );
   }
-  return state;
+  	return state  
 }
 
-/*const oppDetails = (state = [], action) => {
+/*const setDetails = (state = [], action) => {
+  switch (action.type) {
+  case 'SET_DETAILS':
+  	return
+  	console.log("made it 4");
+  		state.update ({
+  			index: action.index,
+  			showDetails: false
+  		});
+  default:
+  	console.log("yo!");
+  	return state
+  }
+}*/
+
+/*
+const oppDetails = (state = [], action) => {
   switch (action.type) {
   case 'SET_DETAILS':
   	return
@@ -37,11 +53,11 @@ export default function(state = [], action) {
   default:
   	return state
   }
-}
+}*/
 
- const pavedApp = combineReducers({
- 	setOrgs,
- 	oppDetails
+/* const pavedApp = combineReducers({
+ 	setInitial,
+ 	setDetails
  });*/
 
-/* export default pavedApp*/
+/*export default pavedApp*/

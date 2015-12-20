@@ -28,14 +28,12 @@ class Opportunities extends React.Component {
 
   render() {
 
-    console.log(this.props);
-
     var oppList = [];
 
     Object.keys(this.props.org.opportunities).forEach((k) => {
       oppList.push(<tr key={this.props.org.opportunities[k]._id + this.props.org.opportunities[k].position}><td className="position-names" onClick={this.onClick}>{this.props.org.opportunities[k].position}</td><td className="timeestimate">{this.props.org.opportunities[k].timeestimate}</td></tr>
       );
-      oppList.push(<OppDetails key={this.props.org.opportunities[k]._id} index={k} showDetails={this.props.showDetails} details={this.props.org.opportunities[k]} />
+      oppList.push(<OppDetails key={this.props.org.opportunities[k]._id} index={k} /*showDetails={this.props.showDetails}*/ details={this.props.org.opportunities[k]} />
       );
     });
 
@@ -46,11 +44,11 @@ class Opportunities extends React.Component {
     );
   }
 }
-/*
-function mapStateToProps(state) {
+
+/*function mapStateToProps(state) {
   return {
-    showDetails: state.get('showDetails')
+    showDetails: store.getState('showDetails')
   };
 }
-
-export default connect(mapStateToProps)(Opportunities)*/
+*/
+export default Opportunities

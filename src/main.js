@@ -17,17 +17,23 @@ const store = finalCreateStore(reducer);
 
 var oppArray = [];
 
+initToggleOppDetailsState (data) => {
+	forEach(obj in data) {
+		forEach(opportunity in obj.opportunities) {
+			
+		}
+	}	
+}
+
 var asyncDispatch = function (oppArray) {
 	return dispatch => {
 		return oppsSource.getOpps().then(
 			(dataObj) => {
-				oppArray = dataObj.data
+				oppArray = initToggleOppDetailsState(dataObj.data)
 			dispatch({
 			 	type: 'SET_STATE',
 			  state: {
-			    orgs: oppArray,
-			    showDetails: [
-			    ]
+			    orgs: oppArray
 			  }
 			});
 		});
