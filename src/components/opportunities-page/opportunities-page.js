@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Banner from './banner';
 import Companies from '../companies/companies';
+import { store } from '../../main.js'
 
 export const OpportunitiesPage = React.createClass({
 
@@ -15,10 +16,10 @@ export const OpportunitiesPage = React.createClass({
 	}
 });
 
-function mapStateToProps(state) {
+function select(state) {
   return {
-    orgs: state.get('orgs')
+    orgs: store.getState()
 	};
 }
 
-export const OpportunitiesPageContainer = connect(mapStateToProps)(OpportunitiesPage);
+export const OpportunitiesPageContainer = connect(select)(OpportunitiesPage);

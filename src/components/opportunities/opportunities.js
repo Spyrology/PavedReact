@@ -7,9 +7,10 @@ import { store } from '../../main.js'
 class Opportunities extends React.Component {
   constructor(){
     super();
-    /*this.state = { showDetails: [] };
-*/
+    /*this.state = { showDetails: [] };*/
+
     this.onClick = (index) => {
+      alert("hello");
       store.dispatch(toggleDetails(index))
       /*this.state.showDetails[k] = !this.state.showDetails[k];
       this.setState({ showDetails: this.state.showDetails });*/
@@ -45,11 +46,11 @@ class Opportunities extends React.Component {
     );
   }
 }
-
+/*
 function mapStateToProps(state) {
   return {
     showDetails: state.get('showDetails')
   };
 }
 
-export default connect(mapStateToProps)(Opportunities)
+export default connect(mapStateToProps)(Opportunities)*/
