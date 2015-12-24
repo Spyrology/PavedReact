@@ -10,25 +10,27 @@ const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
   case 'LOAD_OPPS':
-    return Object.assign({}, state, {
-    	opps: action.data
-    })
+		return {
+			...state,
+			opps: action.data
+		};
   case 'TOGGLE_DETAILS':
-  	return Object.assign({}, state, {
+  	return {
+  		...state,
     	showDetails: toggleShowDetails(state.showDetails, action.oppId)
-    })
+  	};
   }
   return state;
 }
 
 const toggleShowDetails = (array, id) => {
-	var copy = array.slice();
-	var index = copy.indexOf(id)
+	const index = array.indexOf(id);
 	if (index > -1) {
-		copy.splice(index, 1)
+		return [
+		...array.slice(0, index),
+		...array.slice(index + 1)
+		];
+	}	else {
+		return [...array, id];
 	}
-	else {
-		copy.push(id)
-	}
-	return copy;
-}  
+}
