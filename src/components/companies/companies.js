@@ -1,7 +1,7 @@
 import React from 'react';
 import {Map, List} from 'immutable';
-import Positions from '../positions/positions';
-import PosDetails from '../pos-details/pos-details';
+import Opportunities from '../opportunities/opportunities';
+import OppDetails from '../opp-details/opp-details';
 
 class Companies extends React.Component {
 	constructor(props) {
@@ -12,10 +12,10 @@ class Companies extends React.Component {
 
 		var orgsList = [];
 
-		this.props.orgs.toJS().map((org) => {
-			orgsList.push(<th className="company-name" key={org._id + org.name}>{org.name}</th>
+		this.props.orgs.map((org) => {
+			orgsList.push(<tr key={org._id + org.name}><th className="company-name">{org.name}</th></tr>
 			);
-			orgsList.push(<Positions org={org} key={org._id} />
+			orgsList.push(<Opportunities org={org} key={org._id} />
 			);
 		});
 
@@ -23,7 +23,9 @@ class Companies extends React.Component {
       <div className="row">
       	<div className="col-md-8 col-md-offset-2">
 	      	<table className="table">
-	      		{orgsList}
+	      		<tbody>
+	      			{orgsList}
+	      		</tbody>
 	      	</table>
 	      </div>
       </div>

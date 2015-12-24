@@ -3,12 +3,12 @@ import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
 import Home from './components/home/home';
-import {OpportunitiesContainer} from './components/opportunities/opportunities';
+import {OpportunitiesPageContainer} from './components/opportunities-page/opportunities-page';
 
 const routes = (
 	<Route path="/" component={App}>
 	  <IndexRoute component={Home}/>
-	  <Route path="/opportunities" component={OpportunitiesContainer}/>
+	  <Route path="/opportunities" component={OpportunitiesPageContainer}/>
 	</Route>
 );
 

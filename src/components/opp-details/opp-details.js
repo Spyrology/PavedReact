@@ -1,7 +1,7 @@
 import React from 'react';
 // import FileButtons from '../file-buttons/file-buttons';
 
-class PosDetails extends React.Component {
+class OppDetails extends React.Component {
 	constructor(){
 	 super();
 	}
@@ -20,4 +20,4 @@ class PosDetails extends React.Component {
 	}
 }
 
-export default PosDetails;
+export default OppDetails;

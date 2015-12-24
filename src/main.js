@@ -22,18 +22,17 @@ var asyncDispatch = function (oppArray) {
 		return oppsSource.getOpps().then(
 			(dataObj) => {
 				oppArray = dataObj.data
-				console.log(oppArray);
 			dispatch({
-			 	type: 'SET_STATE',
-			  state: {
-			    orgs: oppArray
-			  }
+			 	type: 'LOAD_OPPS',
+			  data: oppArray
 			});
 		});
 	};
 };
 
 store.dispatch(asyncDispatch(oppArray));
+
+export { store }
 
 ReactDOM.render((
 	<Provider store={store}>

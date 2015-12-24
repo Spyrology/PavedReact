@@ -1,24 +1,42 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Banner from './banner';
-import Companies from '../companies/companies';
+import OppDetails from '../opp-details/opp-details';
+import { toggleDetails, setDetails } from '../../actions/actions'
 
-export const Opportunities = React.createClass({
+class Opportunities extends React.Component {
+  constructor(){
+    super();
 
-	render: function() {
-	  return (
-      <div className="container opportunities">
-      	<Banner />
-      	<Companies orgs={this.props.orgs} />
-      </div>
-	  );
-	}
-});
+    this.onClick = (id) => {
+      this.props.dispatch(toggleDetails(id))
+    }
+  }
 
-function mapStateToProps(state) {
-  return {
-    orgs: state.get('orgs')
-	};
+  render() {
+
+    var oppList = [];
+
+    Object.keys(this.props.org.opportunities).forEach((k) => {
+      var oppId = this.props.org.opportunities[k]._id 
+      var isOpen = this.props.showDetails.indexOf(oppId) > -1;
+      oppList.push(<tr key={this.props.org.opportunities[k]._id + this.props.org.opportunities[k].position}><td className="position-names" onClick={ () => this.onClick(this.props.org.opportunities[k]._id)}>{this.props.org.opportunities[k].position}</td><td className="status">{this.props.org.opportunities[k].status}</td></tr>
+      );
+      oppList.push(<OppDetails key={this.props.org.opportunities[k]._id} index={k} showDetails={isOpen} details={this.props.org.opportunities[k]} />
+      );
+    });
+
+    return (
+      <tbody>
+        {oppList}
+      </tbody>
+    );
+  }
 }
 
-export const OpportunitiesContainer = connect(mapStateToProps)(Opportunities);
+function select(state) {
+  return {
+    showDetails: state.showDetails
+  };
+}
+
+export default connect(select)(Opportunities);
