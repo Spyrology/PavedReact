@@ -23,12 +23,8 @@ var asyncDispatch = function (oppArray) {
 			(dataObj) => {
 				oppArray = dataObj.data
 			dispatch({
-			 	type: 'SET_STATE',
-			  state: {
-			    orgs: oppArray,
-			    showDetails: [
-			    ]
-			  }
+			 	type: 'LOAD_OPPS',
+			  data: oppArray
 			});
 		});
 	};

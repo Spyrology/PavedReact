@@ -12,23 +12,20 @@ class Companies extends React.Component {
 
 		var orgsList = [];
 
-		console.log(this.props);
-		console.log('in companies');
-
-		this.props.orgs.orgs.map((org) => {
-			orgsList.push(<th className="company-name" key={org._id + org.name}>{org.name}</th>
+		this.props.orgs.map((org) => {
+			orgsList.push(<tr key={org._id + org.name}><th className="company-name">{org.name}</th></tr>
 			);
 			orgsList.push(<Opportunities org={org} key={org._id} />
 			);
 		});
 
-		console.log(orgsList);
-
 	  return (
       <div className="row">
       	<div className="col-md-8 col-md-offset-2">
 	      	<table className="table">
-	      		{orgsList}
+	      		<tbody>
+	      			{orgsList}
+	      		</tbody>
 	      	</table>
 	      </div>
       </div>

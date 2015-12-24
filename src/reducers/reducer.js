@@ -1,47 +1,34 @@
 import { combineReducers } from 'redux';
 import { Map } from 'immutable';
-import { TOGGLE_DETAILS, SET_DETAILS } from '../actions/actions';
+import { TOGGLE_DETAILS } from '../actions/actions';
 
-/*function setState(state, newState) {
-	console.log(newState);
-  return state.merge(newState);
-}*/
+const initialState = {
+	opps: [],
+	showDetails: []
+}
 
-export default function(state = [], action) {
+export default function(state = initialState, action) {
   switch (action.type) {
-  case 'SET_STATE':
-    return (
-    	state, action.state
-    );
+  case 'LOAD_OPPS':
+    return Object.assign({}, state, {
+    	opps: action.data
+    })
+  case 'TOGGLE_DETAILS':
+  	return Object.assign({}, state, {
+    	showDetails: toggleShowDetails(state.showDetails, action.oppId)
+    })
   }
   return state;
 }
 
-/*const oppDetails = (state = [], action) => {
-  switch (action.type) {
-  case 'SET_DETAILS':
-  	return
-  	console.log("made it 4");
-  		state.update ({
-  			index: action.index,
-  			showDetails: false
-  		});
-  case 'TOGGLE_DETAILS':
-  	return
-  		console.log("made it 2"); 
-	  	state.map(showDetails =>
-	  		showDetails.index === action.index ?   
-	  		Object.assign({}, state, {showDetails: !opp.showDetails}) :
-	  		state
-	  		);
-  default:
-  	return state
-  }
-}
-
- const pavedApp = combineReducers({
- 	setOrgs,
- 	oppDetails
- });*/
-
-/* export default pavedApp*/
+const toggleShowDetails = (array, id) => {
+	var copy = array.slice();
+	var index = copy.indexOf(id)
+	if (index > -1) {
+		copy.splice(index, 1)
+	}
+	else {
+		copy.push(id)
+	}
+	return copy;
+}  
