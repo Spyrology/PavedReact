@@ -1,5 +1,5 @@
 import React from 'react';
-// import FileButtons from '../file-buttons/file-buttons';
+import FileButtons from '../file-buttons/file-buttons';
 
 class OppDetails extends React.Component {
 	constructor(){

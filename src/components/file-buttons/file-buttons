@@ -4,7 +4,9 @@ class FileButtons extends React.Component {
 
 	render() {
 	  return (
-      <p>I BUTTON</p>
+      <div>
+      	<button>GET EVALUATION</button> 
+      </div>
 	  );
 	}
 }
