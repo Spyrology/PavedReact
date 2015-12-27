@@ -23,6 +23,9 @@ class OppDetails extends React.Component {
 		  		<div>
 		  			{this.props.details.price}
 		  		</div>
+		  		<div>
+		  			<FileButtons org={this.props.org} details={this.props.details} />
+		  		</div>
 	  		</td> : null}
 		  </tr>
   	);
