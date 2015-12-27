@@ -12,6 +12,15 @@ class OppDetails extends React.Component {
 			{this.props.showDetails ? 
 	  		<td>
 		  		<div>
+		  			{this.props.details.description}
+		  		</div>
+		  		<div>
+		  			{this.props.details.timeestimate}
+		  		</div>
+		  		<div>
+		  			{this.props.details.requirements}
+		  		</div>
+		  		<div>
 		  			{this.props.details.price}
 		  		</div>
 	  		</td> : null}
