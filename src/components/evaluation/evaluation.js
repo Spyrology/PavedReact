@@ -22,18 +22,22 @@ class Evaluation extends React.Component {
 
 		Object.keys(company.opportunities).forEach((k) => {
 			if (company.opportunities[k]._id === this.props.params.id) {
-				evalOpportunityDetails.push(<tr key={company.opportunities[k]._id}><td className="position-names">{company.opportunities[k].position}</td><td>{company.opportunities[k].description}</td></tr>
+				evalOpportunityDetails.push(<tr key={company.opportunities[k]._id}><td className="position-names">{company.opportunities[k].position}</td><tr><td>{company.opportunities[k].description}</td></tr></tr>
 				);
 			}
 		});
 
 	  return (
-      <table>
-      	<tbody>
-      		{evalCompanyName}
-      		{evalOpportunityDetails}
-      	</tbody>
-      </table>
+      <div className="row">
+      	<div className="col-md-8 col-md-offset-2">
+	      	<table className="table">
+		      	<tbody>
+		      		{evalCompanyName}
+		      		{evalOpportunityDetails}
+		      	</tbody>
+      		</table>
+      	</div>
+      </div>
 	  );
 	}
 }
