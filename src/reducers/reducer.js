@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
 import { Map } from 'immutable';
-import { TOGGLE_DETAILS } from '../actions/actions';
+import { TOGGLE_DETAILS, USER_AUTH } from '../actions/actions';
 
 const initialState = {
 	opps: [],
-	showDetails: []
+	showDetails: [],
+	isAuth: undefined
 }
 
 export default function(state = initialState, action) {
@@ -14,10 +15,15 @@ export default function(state = initialState, action) {
 			...state,
 			opps: action.data
 		};
-  case 'TOGGLE_DETAILS':
+  case TOGGLE_DETAILS:
   	return {
   		...state,
     	showDetails: toggleShowDetails(state.showDetails, action.oppId)
+  	};
+  case USER_AUTH:
+  	return {
+  		...state,
+  		isAuth: action.isAuth
   	};
   }
   return state;

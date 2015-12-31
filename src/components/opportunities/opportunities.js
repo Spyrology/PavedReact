@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import OppDetails from '../opp-details/opp-details';
 import { toggleDetails, setDetails } from '../../actions/actions'
+import DetailsModal from '../details-modal/details-modal';
 
 class Opportunities extends React.Component {
   constructor(){
@@ -21,8 +22,10 @@ class Opportunities extends React.Component {
       var isOpen = this.props.showDetails.indexOf(oppId) > -1;
       oppList.push(<tr key={this.props.org.opportunities[k]._id + this.props.org.opportunities[k].position}><td className="position-names" onClick={ () => this.onClick(oppId)}>{this.props.org.opportunities[k].position}</td><td className="status">{this.props.org.opportunities[k].status}</td></tr>
       );
-      oppList.push(<OppDetails key={this.props.org.opportunities[k]._id} org={this.props.org} showDetails={isOpen} details={this.props.org.opportunities[k]} />
-      );
+      if (isOpen) {
+        oppList.push(<DetailsModal key={this.props.org.opportunities[k]._id} org={this.props.org} showDetails={isOpen} details={this.props.org.opportunities[k]} />
+        );
+      }
     });
 
     return (

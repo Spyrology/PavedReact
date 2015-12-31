@@ -9,7 +9,6 @@ class OppDetails extends React.Component {
 	render() {
 	  return (
 			<tr>
-			{this.props.showDetails ? 
 	  		<td>
 		  		<div>
 		  			{this.props.details.description}
@@ -26,7 +25,7 @@ class OppDetails extends React.Component {
 		  		<div>
 		  			<FileButtons org={this.props.org} details={this.props.details} />
 		  		</div>
-	  		</td> : null}
+	  		</td>
 		  </tr>
   	);
 	}

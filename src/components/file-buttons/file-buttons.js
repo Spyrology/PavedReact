@@ -9,12 +9,11 @@ class FileButtons extends React.Component {
 	render() {
 	  return (
       <div>
-      	<Link to={"/opportunities/" + this.props.org._id + "/evaluation/" + this.props.details._id}><button type="button">GET EVALUATION
+      	<Link to={"/opportunities/" + this.props.org._id + "/evaluation/" + this.props.details._id}><button className="file-buttons" type="button">GET EVALUATION
       	</button></Link>
-      	<form id="submit_upload" action="/opportunities/upload" method="post" encType="multipart/form-data">
+      	<form className="file-buttons" id="submit_upload" action="/opportunities/upload" method="post" encType="multipart/form-data">
 						<button id="user_upload">UPLOAD EVALUATION
 						</button>
-						<input type="file" id="file" name="file" />
 				</form>
       </div>
 	  );
