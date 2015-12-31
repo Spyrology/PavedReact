@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { Map } from 'immutable';
-import { TOGGLE_DETAILS, USER_AUTH } from '../actions/actions';
+import { TOGGLE_DETAILS, USER_AUTH, CLOSE_ALL_DETAILS } from '../actions/actions';
 
 const initialState = {
 	opps: [],
@@ -25,7 +25,12 @@ export default function(state = initialState, action) {
   		...state,
   		isAuth: action.isAuth
   	};
-  }
+  case CLOSE_ALL_DETAILS:
+	  return {
+	    ...state,
+	    showDetails: []
+	  };
+	}
   return state;
 }
 

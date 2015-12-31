@@ -3,6 +3,7 @@ import Auth from '../data/auth';
 //action types
 export const TOGGLE_DETAILS = 'TOGGLE_DETAILS'
 export const USER_AUTH = 'USER_AUTH'
+export const CLOSE_ALL_DETAILS = 'CLOSE_ALL_DETAILS'
 
 //action creators
 
@@ -11,6 +12,12 @@ export function toggleDetails(id) {
 		type: TOGGLE_DETAILS,
 		oppId: id
 	};
+}
+
+export function closeAllDetails() {
+  return {
+    type: CLOSE_ALL_DETAILS
+  };
 }
 
 export function loadUserDetails(cb) {

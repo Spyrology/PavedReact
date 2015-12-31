@@ -11,6 +11,7 @@ const DetailsModal = React.createClass({
 
   close() {
     this.setState({ showModal: false });
+    this.props.callbackParent();
   },
 
  /* open() {
@@ -22,16 +23,17 @@ const DetailsModal = React.createClass({
     return (
       <div>
 
-        <Modal show={this.state.showModal}>
+        <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.org.name}</Modal.Title>
+            <Modal.Title><h1>{this.props.org.name}</h1></Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>{this.props.details.position}</h4>
-            <p>{this.props.details.requirements}</p>
-            <p>{this.props.details.timeestimate}</p>
-            <p>{this.props.details.description}</p>
-            <p>{this.props.details.price}</p>
+            <h3>{this.props.details.position}</h3>
+            <hr />
+            <p>Minimum Requirements: {this.props.details.requirements}</p>
+            <p>Time estimate: {this.props.details.timeestimate}</p>
+            <p>Description: {this.props.details.description}</p>
+            <p>${this.props.details.price}</p>
 
             <hr />
           <FileButtons org={this.props.org} details={this.props.details} />
