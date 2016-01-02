@@ -8,6 +8,7 @@ import {Provider} from 'react-redux';
 import reducer from './reducers/reducer';
 import routes from './routes';
 import oppsSource from './data/opportunities';
+import { loadUserDetails } from './actions/actions';
 
 let history = createBrowserHistory();
 
@@ -34,8 +35,13 @@ store.dispatch(asyncDispatch(oppArray));
 
 export { store }
 
-ReactDOM.render((
-	<Provider store={store}>
-  	<Router history={history} routes={routes} />
-  </Provider>
-), document.querySelector('#app'));
+store.dispatch(loadUserDetails(
+		() => {
+			ReactDOM.render((
+				<Provider store={store}>
+			  	<Router history={history} routes={routes} />
+			  </Provider>
+			), document.querySelector('#app'));
+		}
+	)
+);
