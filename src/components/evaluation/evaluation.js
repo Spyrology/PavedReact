@@ -6,6 +6,12 @@ class Evaluation extends React.Component {
 	 super();
 	}
 
+	componentWillMount() {
+		if (!this.props.isUserLoggedIn) {
+			this.props.history.pushState({redirectURL: this.props.location.pathname}, "/auth");
+		}
+	}
+
 	render() {
 
 		let evalCompanyName = [];
@@ -44,7 +50,8 @@ class Evaluation extends React.Component {
 
 function select(state) {
   return {
-    orgs: state.opps
+    orgs: state.opps,
+    isUserLoggedIn: state.isAuth
   };
 }
 

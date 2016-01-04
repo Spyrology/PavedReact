@@ -23,12 +23,24 @@ export function closeAllDetails() {
 export function loadUserDetails(cb) {
 	return dispatch => {
 		return Auth.getCreds().then(
-			(dataObj) => {
+			(res) => {
 			dispatch({
 			 	type: USER_AUTH,
-			  isAuth: dataObj.data.authenticated
+			  isAuth: res.data.authenticated
 			});
 			cb();
+		});
+	};
+}
+
+export function authUser(email, password) {
+	return dispatch => {
+		return Auth.authUser(email, password).then(
+			(res) => {
+			dispatch({
+			 	type: USER_AUTH,
+			  isAuth: res.data.success
+			});
 		});
 	};
 }

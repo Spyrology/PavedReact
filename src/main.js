@@ -33,6 +33,8 @@ var asyncDispatch = function (oppArray) {
 
 store.dispatch(asyncDispatch(oppArray));
 
+window.store = store;
+
 export { store }
 
 store.dispatch(loadUserDetails(
