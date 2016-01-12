@@ -1,10 +1,25 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import { Input } from 'react-bootstrap';
 
 class PaymentForm extends React.Component {
   constructor(){
     super();
+
+    /*this.handleFormSubmit = (e) => {
+      e.preventDefault();
+      var data = this.refs.data.getValue();
+      this.props.dispatch(authPayment(formdata));
+    }*/
+
   }
+
+  /*componentWillReceiveProps(newProps) {
+    if (newProps.hasUserPurchased === true) {
+      var redirectURL = this.props.location.state.redirectURL || '/';
+      this.props.history.pushState({}, redirectURL);
+    }
+  }*/
 
   render() {
     return (
@@ -15,7 +30,7 @@ class PaymentForm extends React.Component {
               <div className="form-header">
               </div>
               <div className="form-body">
-                <form action="" method="POST" id="payment-form">
+                <form onSubmit={this.handleFormSubmit}>
                 <div className="row">
                   <div className="col-md-4 col-md-offset-4">
                     <span className="payment-errors"></span>
@@ -53,4 +68,10 @@ class PaymentForm extends React.Component {
   }
 }
 
-export default PaymentForm;
+function select(state) {
+  return {
+    hasUserPurchased: state.hasPurchased
+  };
+}
+
+export default connect(select)(PaymentForm);

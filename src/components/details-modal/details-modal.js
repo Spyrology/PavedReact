@@ -14,9 +14,9 @@ const DetailsModal = React.createClass({
     this.props.callbackParent();
   },
 
- /* open() {
-    this.setState({ showModal: this.props.showDetails });
-  },*/
+  componentWillUnmount() {
+    this.props.callbackParent();
+  },
 
   render() {
   
