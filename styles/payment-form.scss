@@ -1,0 +1,44 @@
+.form {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+}
+
+.form-header {
+	height: 4em;
+	background-color: rgb(73,108,137);
+	margin-top: 5em;
+	-webkit-border-radius: 4px 4px 0px 0px;
+	-moz-border-radius: 4px 4px 0px 0px;
+	border-radius: 4px 4px 0px 0px;
+}
+
+.form-body {
+	text-align: center;
+	background-color: rgb(242,242,242);
+	margin-bottom: 5em;
+	-webkit-border-radius: 0px 0px 4px 4px;
+	-moz-border-radius: 0px 0px 4px 4px;
+	border-radius: 0px 0px 4px 4px;
+}
+
+.form-details {
+	margin-top: 2.5em;
+}
+
+.nopadding {
+	padding-right: 0 !important;
+}
+
+.noleftpadding {
+	padding-left: 0 !important;
+}
+
+.payment-errors {
+	position: absolute;
+	display: block;
+	left: 0;
+	right: 0;
+	margin-top: .5em;
+}

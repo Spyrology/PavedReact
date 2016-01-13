@@ -1,0 +1,26 @@
+.cstm-btn {
+	height: 3em;
+	width: 8em;
+	margin: 1em 0 1em 0;
+	background: rgb(73,108,137);
+	border: 0;
+	border-radius: .2em;
+	color: white;
+	font-family: 'Cantarell', sans-serif;
+}
+
+.cstm-btn:hover {
+	opacity: .8;
+}
+
+.payment {
+	background: white;
+	border: 3px solid rgb(73,108,137);
+	color: black;
+}
+
+.payment:hover {
+	background: rgb(73,108,137);
+	color: white;
+	opacity: 1;
+}

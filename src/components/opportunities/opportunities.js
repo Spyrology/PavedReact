@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import OppDetails from '../opp-details/opp-details';
 import { toggleDetails, setDetails, closeAllDetails } from '../../actions/actions'
 import DetailsModal from '../details-modal/details-modal';
 
