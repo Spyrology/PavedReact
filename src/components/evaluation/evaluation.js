@@ -1,16 +1,9 @@
 import React from 'react';
-/*import {connect} from 'react-redux';*/
 
 class Evaluation extends React.Component {
 	constructor(){
 	 super();
 	}
-
-	/*componentWillMount() {
-		if (!this.props.isUserLoggedIn) {
-			this.props.history.pushState({redirectURL: this.props.location.pathname}, "/auth");
-		}
-	}*/
 
 	render() {
 
@@ -48,11 +41,4 @@ class Evaluation extends React.Component {
 	}
 }
 
-/*function select(state) {
-  return {
-    orgs: state.opps,
-    isUserLoggedIn: state.isAuth
-  };
-}
-*/
 export default Evaluation;

@@ -10,8 +10,8 @@ var Auth = {
     checkPaymentAndGetEval(companyID, evalID) {
     	return axios.get(`http://localhost:8000/opportunities/${companyID}/evaluation/${evalID}`, {withCredentials: true})
     },
-    authPayment(data) {
-    	return axios.post('http://localhost:8000/payment', {data}, {withCredentials: true})
+    submitPayment(payment, companyID, evalID) {
+    	return axios.post(`http://localhost:8000/opportunities/${companyID}/evaluation/${evalID}`, {payment}, {withCredentials: true})
     }
 };
 

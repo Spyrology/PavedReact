@@ -63,16 +63,39 @@ export function checkPaymentAndGetEval(companyID, evalID) {
 		});
 		return Auth.checkPaymentAndGetEval(companyID, evalID).then(
 			(res) => {
-			dispatch({
-			 	type: HAS_PURCHASED,
-			  hasPurchased: res.data.hasPurchased ? paymentstatus.HAS_PAID : paymentstatus.NOT_PAID,
-			  evalID: evalID
-			});
-			dispatch({
-			 	type: EVAL_DETAILS,
-			  evalDetails: res.data.evalDetails,
-			  evalID: evalID
-			});
-		});
+				dispatch({
+				 	type: HAS_PURCHASED,
+				  hasPurchased: res.data.hasPurchased ? paymentstatus.HAS_PAID : paymentstatus.NOT_PAID,
+				  evalID: evalID
+				});
+				dispatch({
+				 	type: EVAL_DETAILS,
+				  evalDetails: res.data.evalDetails,
+				  evalID: evalID
+				});
+			}
+		);
 	};
+}
+
+export function submitPayment(payment, companyID, evalID) {
+	return dispatch => {
+		/*dispatch({
+			type: HAS_PURCHASED,
+			hasPurchased: paymentstatus.PENDING,
+			evalID: evalID
+		});*/
+		return Auth.submitPayment(payment, companyID, evalID).then(
+			(res) => {
+				if (res.data.success === false) {
+					return {success: false}
+				}
+				dispatch({
+				 	type: HAS_PURCHASED,
+				  hasPurchased: res.data.hasPurchased ? paymentstatus.HAS_PAID : paymentstatus.NOT_PAID,
+				  evalID: evalID
+				});
+			}	
+		);
+	}
 }
