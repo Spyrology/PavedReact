@@ -8,7 +8,7 @@ class Opportunities extends React.Component {
     super();
 
     this.onClick = (id) => {
-      this.props.dispatch(toggleDetails(id))
+      this.props.dispatch(toggleDetails(id));
     }
 
     this.onCloseModal = () => {

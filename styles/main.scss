@@ -1,17 +1,23 @@
-@import "header";
-@import "banner";
-@import "companies";
-@import "opportunities-page";
-@import "auth";
-@import "payment-form";
-@import "buttons";
+@import "./header";
+@import "./banner";
+@import "./companies";
+@import "./opportunities-page";
+@import "./auth";
+@import "./payment-form";
+@import "./buttons";
+@import "./evaluation";
 
 .body {
 	font-family: 'Cantarell', sans-serif;
+	background: rgb(248,248,248);
+	overflow-x: hidden;
 }
 
-.container-fluid {
-	margin: 0 auto;
-	width: 100%;
-	padding: 0px;
+.home {
+	text-align: center;
+	margin-top: 100px;
+}
+
+.home h1 {
+	color: rgb(85,95,97);
 }

@@ -44,7 +44,7 @@ export default function(state = initialState, action) {
 	  return {
 	    ...state,
 	    evalDetails: {
-	    	...state.hasPurchased,
+	    	...state.evalDetails,
 	    	[action.evalID]: action.evalDetails
 	    }
 	  };

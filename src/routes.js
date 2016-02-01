@@ -6,15 +6,15 @@ import Home from './components/home/home';
 import {OpportunitiesPageContainer} from './components/opportunities-page/opportunities-page';
 import CheckAuthAndPayment from './components/checkauthandpayment/checkauthandpayment';
 import Auth from './components/auth/auth';
-import PaymentForm from './components/payment-form/payment-form';
+import SignUp from './components/auth/signup';
 
 const routes = (
 	<Route path="/" component={App}>
 	  <IndexRoute component={Home}/>
 	  <Route path="/opportunities" component={OpportunitiesPageContainer}/>
 	  <Route path="/opportunities/:companyID/evaluation/:id" component={CheckAuthAndPayment}/>
-	  <Route path="/auth" component={Auth}/>
-	  {/*<Route path="/payment" component={PaymentForm}/>*/}
+	  <Route path="/login" component={Auth}/>
+	  <Route path="/signup" component={SignUp}/>
 	</Route>
 );
 

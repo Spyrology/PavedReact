@@ -54,6 +54,18 @@ export function authUser(email, password) {
 	};
 }
 
+export function signUpUser(firstname, lastname, email, password) {
+	return dispatch => {
+		return Auth.signUpUser(firstname, lastname, email, password).then(
+			(res) => {
+			dispatch({
+			 	type: USER_AUTH,
+			  isAuth: res.data.success
+			});
+		});
+	};
+}
+
 export function checkPaymentAndGetEval(companyID, evalID) {
 	return dispatch => {
 		dispatch({
@@ -78,14 +90,14 @@ export function checkPaymentAndGetEval(companyID, evalID) {
 	};
 }
 
-export function submitPayment(payment, companyID, evalID) {
+export function submitPayment(token, companyID, evalID) {
 	return dispatch => {
 		/*dispatch({
 			type: HAS_PURCHASED,
 			hasPurchased: paymentstatus.PENDING,
 			evalID: evalID
 		});*/
-		return Auth.submitPayment(payment, companyID, evalID).then(
+		return Auth.submitPayment(token, companyID, evalID).then(
 			(res) => {
 				if (res.data.success === false) {
 					return {success: false}

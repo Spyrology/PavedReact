@@ -1,8 +1,40 @@
 import React from 'react';
+import oppsSource from '../../data/opportunities';
 
 class Evaluation extends React.Component {
-	constructor(){
-	 super();
+	constructor(...args){
+		super(...args);
+
+		this.state = {
+      uploadStatus: ""
+    };
+
+		this.handleDownload = (e) => {
+      e.preventDefault();
+      var companyID = this.props.companyID;
+      var evalID = this.props.evalID;
+      window.open(`http://localhost:8000/opportunities/${companyID}/download/${evalID}`);
+      /*oppsSource.downloadMaterials(companyID, evalID);*/
+    }
+
+    this.handleUpload  = (e) => {
+			e.preventDefault();
+			var companyID = this.props.companyID;
+      var evalID = this.props.evalID;
+			var file = this.refs.fileInput.files[0];
+			if (file) {
+				this.setState({uploadStatus: "pending"});
+	    	oppsSource.uploadEval(file, companyID, evalID).then(response => {
+	    			if (response.data.success === true) {
+	    				this.setState({uploadStatus: "success"})
+	    			}
+	    			else {
+	    				this.setState({uploadStatus: "failed"})
+	    			}
+	    	});
+			}
+			//if false, null, undefined, empty string, 0 - will return false
+		}
 	}
 
 	render() {
@@ -28,13 +60,29 @@ class Evaluation extends React.Component {
 
 	  return (
       <div className="row">
-      	<div className="col-md-8 col-md-offset-2">
+      	<div className="col-md-8 col-md-offset-2 evaluation">
 	      	<table className="table">
 		      	<tbody>
 		      		{evalCompanyName}
 		      		{evalOpportunityDetails}
+		      		{(this.state.uploadStatus === "pending") && <div>Upload pending</div>}
 		      	</tbody>
       		</table>
+      		<div className="file-select">
+      			<form className="file-buttons" onSubmit={this.handleDownload}>
+							<button className="cstm-btn">DOWNLOAD MATERIALS
+							</button>
+						</form>
+      		</div>
+      		<div className="file-select">
+	      		<form className="file-buttons" onSubmit={this.handleUpload}>
+							<button className="cstm-btn" id="user_upload">UPLOAD EVALUATION
+							</button>
+							<div className="file-select">
+								<input type="file" name="file" ref="fileInput" />
+							</div>
+						</form>
+      		</div>
       	</div>
       </div>
 	  );

@@ -1,16 +1,18 @@
 .cstm-btn {
-	height: 3em;
+	height: 3.3em;
 	width: 8em;
 	margin: 1em 0 1em 0;
-	background: rgb(73,108,137);
-	border: 0;
+	background: rgb(255,255,255);
+	border: 2px solid rgb(18,95,136);
 	border-radius: .2em;
-	color: white;
+	color: rgb(18,95,136);
 	font-family: 'Cantarell', sans-serif;
 }
 
 .cstm-btn:hover {
-	opacity: .8;
+	background: rgb(18,95,136);
+	color: rgb(255,255,255);
+	/* opacity: .8; */
 }
 
 .payment {
@@ -23,4 +25,8 @@
 	background: rgb(73,108,137);
 	color: white;
 	opacity: 1;
+}
+
+.file-select {
+	display: inline-block;
 }

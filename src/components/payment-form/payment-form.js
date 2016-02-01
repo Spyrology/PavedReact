@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { Input } from 'react-bootstrap';
 import { submitPayment } from '../../actions/actions';
 
@@ -7,9 +7,10 @@ class PaymentForm extends React.Component {
   constructor(...args) {
     super(...args);
 
+    Stripe.setPublishableKey('pk_test_0HcHK5Vybl1HO9cPxLQTYCAU');
+
     this.state = {
       payment: { // the data we want our form to manage
-        name: "",
         number: "",
         month: "",
         year: "",
@@ -21,18 +22,38 @@ class PaymentForm extends React.Component {
 
     this.handleFormSubmit = (e) => {
       e.preventDefault();
+      /*Stripe.setPublishableKey('pk_test_0HcHK5Vybl1HO9cPxLQTYCAU');*/
+      this.setState({pending: true});
+        Stripe.card.createToken({
+          number: this.state.payment.number,
+          cvc: this.state.payment.cvc,
+          exp_month: this.state.payment.month,
+          exp_year: this.state.payment.year
+        }, this.handleStripeTokenCreate); // make sure we don't lose `this`
+    }
+  
+    this.handleStripeTokenCreate = (stripeStatus, stripeResponse) => {
       var companyID = this.props.companyID;
       var evalID = this.props.evalID;
-      this.setState({pending: true});
-      this.props.dispatch(submitPayment(this.state.payment, companyID, evalID)).then(
-        (result) => {
-          if (result.success === false) {
-            this.setState({errormessage: "Payment declined. Please try again.", pending: false});
+      if (stripeResponse.error) {
+        // oops! we couldn't create the token for some reason
+        this.setState({
+          pending: false,
+          errormessage: stripeResponse.error.message
+        });
+      } else {
+        // woot! we got a token
+        console.log(stripeResponse.id);
+        this.props.dispatch(submitPayment(stripeResponse.id, companyID, evalID)).then(response  => {
+          if (response.success === false) {
+            this.setState({
+              pending: false,
+              errormessage: "Problem charging card"
+            });
           }
-        }
-      );
+        });
+      }
     }
-
   }
 
   render() {
