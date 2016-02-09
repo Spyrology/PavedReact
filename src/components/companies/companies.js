@@ -12,10 +12,11 @@ class Companies extends React.Component {
 
 		var orgsList = [];
 
-		this.props.orgs.map((org) => {
-			orgsList.push(<tr key={org._id + org.name}><th className="company-name">{org.name}</th></tr>
+		Object.keys(this.props.orgs).map((id) => {
+			var org = this.props.orgs[id];
+			orgsList.push(<tr key={id + "orgname"}><th className="company-name">{org.name}</th></tr>
 			);
-			orgsList.push(<Opportunities org={org} key={org._id} />
+			orgsList.push(<Opportunities org={org} key={id} />
 			);
 		});
 

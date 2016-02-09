@@ -1,4 +1,5 @@
 import Auth from '../data/auth';
+import oppsSource from '../data/opportunities';
 
 //special values
 export const paymentstatus = {
@@ -8,6 +9,7 @@ export const paymentstatus = {
 }
 
 //action types
+export const LOAD_OPPS = 'LOAD_OPPS'
 export const TOGGLE_DETAILS = 'TOGGLE_DETAILS'
 export const USER_AUTH = 'USER_AUTH'
 export const CLOSE_ALL_DETAILS = 'CLOSE_ALL_DETAILS'
@@ -15,6 +17,20 @@ export const HAS_PURCHASED = 'HAS_PURCHASED'
 export const EVAL_DETAILS = 'EVAL_DETAILS'
 
 //action creators
+
+export function loadOpps() {
+	return dispatch => {
+		return oppsSource.getOpps().then(
+			(dataObj) => {
+				var oppArray = dataObj.data
+				dispatch({
+				 	type: LOAD_OPPS,
+				  data: oppArray
+				});
+		});
+	};
+};
+
 
 export function toggleDetails(id) {
 	return {
@@ -54,9 +70,9 @@ export function authUser(email, password) {
 	};
 }
 
-export function signUpUser(firstname, lastname, email, password) {
+export function signUpUser(firstname, lastname, email, password, confirmpassword) {
 	return dispatch => {
-		return Auth.signUpUser(firstname, lastname, email, password).then(
+		return Auth.signUpUser(firstname, lastname, email, password, confirmpassword).then(
 			(res) => {
 			dispatch({
 			 	type: USER_AUTH,
@@ -92,11 +108,6 @@ export function checkPaymentAndGetEval(companyID, evalID) {
 
 export function submitPayment(token, companyID, evalID) {
 	return dispatch => {
-		/*dispatch({
-			type: HAS_PURCHASED,
-			hasPurchased: paymentstatus.PENDING,
-			evalID: evalID
-		});*/
 		return Auth.submitPayment(token, companyID, evalID).then(
 			(res) => {
 				if (res.data.success === false) {

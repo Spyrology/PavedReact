@@ -5,7 +5,7 @@ import App from './components/app';
 import Home from './components/home/home';
 import {OpportunitiesPageContainer} from './components/opportunities-page/opportunities-page';
 import CheckAuthAndPayment from './components/checkauthandpayment/checkauthandpayment';
-import Auth from './components/auth/auth';
+import LogIn from './components/auth/login';
 import SignUp from './components/auth/signup';
 
 const routes = (
@@ -13,7 +13,7 @@ const routes = (
 	  <IndexRoute component={Home}/>
 	  <Route path="/opportunities" component={OpportunitiesPageContainer}/>
 	  <Route path="/opportunities/:companyID/evaluation/:id" component={CheckAuthAndPayment}/>
-	  <Route path="/login" component={Auth}/>
+	  <Route path="/login" component={LogIn}/>
 	  <Route path="/signup" component={SignUp}/>
 	</Route>
 );

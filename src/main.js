@@ -9,7 +9,7 @@ import {Provider} from 'react-redux';
 import reducer from './reducers/reducer';
 import routes from './routes';
 import oppsSource from './data/opportunities';
-import { loadUserDetails } from './actions/actions';
+import { loadOpps, loadUserDetails } from './actions/actions';
 
 let history = createBrowserHistory();
 
@@ -17,22 +17,7 @@ const finalCreateStore = compose(applyMiddleware(thunk), DevTools.instrument())(
 
 const store = finalCreateStore(reducer);
 
-var oppArray = [];
-
-var asyncDispatch = function (oppArray) {
-	return dispatch => {
-		return oppsSource.getOpps().then(
-			(dataObj) => {
-				oppArray = dataObj.data
-			dispatch({
-			 	type: 'LOAD_OPPS',
-			  data: oppArray
-			});
-		});
-	};
-};
-
-store.dispatch(asyncDispatch(oppArray));
+store.dispatch(loadOpps());
 
 window.store = store;
 

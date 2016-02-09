@@ -4,21 +4,9 @@ import { authUser } from '../../actions/actions';
 import { Link } from 'react-router';
 import {connect} from 'react-redux'; 
 
-class Auth extends React.Component {
+class LogIn extends React.Component {
 	constructor(){
 	 super();
-
-	 	this.state = {
-      login: true
-    };
-
-    this.toggleAuth = () => {
-	    this.setState({login: !this.state.login});
-	  }
-
-	 /* this.logIn = () => {
-	    this.setState({login: true});
-	  }*/
 
 		this.handleFormSubmit = (e) => {
 			e.preventDefault();
@@ -41,6 +29,7 @@ class Auth extends React.Component {
 		const logIn = (
 			<div className="login">
 				<form onSubmit={this.handleFormSubmit}>
+					<div>&nbsp;</div>
 				  <Input className="auth-input" type="email" ref="email" placeholder="Enter email" />
 				  <Input className="auth-input" type="password" ref="password" />
 				  <div className="authbtn"><button className="cstm-btn">SUBMIT</button></div>
@@ -57,7 +46,7 @@ class Auth extends React.Component {
 						</div>
 						<Link to='/signup' state={this.props.location.state}>
 							<div className="signup-text-container">
-								<p className="signup-text" onClick={ () => this.toggleAuth()}>Sign Up</p>
+								<p className="signup-text">Sign Up</p>
 							</div>
 						</Link>
 						<div className="auth">
@@ -76,4 +65,4 @@ function select(state) {
   };
 }
 
-export default connect(select)(Auth);
+export default connect(select)(LogIn);

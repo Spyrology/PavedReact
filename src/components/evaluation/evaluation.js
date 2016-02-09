@@ -1,5 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import oppsSource from '../../data/opportunities';
+import { Alert, ProgressBar } from 'react-bootstrap';
+import _ from 'lodash';
 
 class Evaluation extends React.Component {
 	constructor(...args){
@@ -33,29 +36,35 @@ class Evaluation extends React.Component {
 	    			}
 	    	});
 			}
-			//if false, null, undefined, empty string, 0 - will return false
 		}
 	}
 
 	render() {
 
-		let evalCompanyName = [];
-		let company = {};
-		let evalOpportunityDetails = [];
+		const alertPending = (
+		  <Alert bsStyle="info">
+		    <strong>Your evaluation is uploading...</strong>
+		  </Alert>
+		);
 
-    this.props.orgs.map((org) => {
-    	if (org._id === this.props.companyID) {
-    		company = org;
-				evalCompanyName.push(<tr key={org._id + org.name}><th className="company-name">{org.name}</th></tr>
-				);
-			}
-		});
+		const alertSuccess = (
+		  <Alert bsStyle="success">
+		    <strong>Upload successful! Strong work!</strong>
+		  </Alert>
+		);
 
-		Object.keys(company.opportunities).forEach((k) => {
-			if (company.opportunities[k]._id === this.props.evalID) {
-				evalOpportunityDetails.push(<tr key={company.opportunities[k]._id}><td className="position-names">{company.opportunities[k].position}</td><tr><td>{company.opportunities[k].description}</td></tr></tr>
-				);
-			}
+		const alertFail = (
+		  <Alert bsStyle="warning">
+		    <strong>Uh oh! Something went wrong with your upload. Please try again or email info@paved.io for help.</strong>
+		  </Alert>
+		);
+
+		const evalDetails = this.props.evalDetails;
+		const org = this.props.orgs[this.props.companyID]
+		const evaluation = _.find(org.opportunities, {_id: this.props.evalID});
+
+		const positionDetails = Object.keys(evalDetails).map((k) => {
+			return <tr key={evalDetails[k]}><td>{evalDetails[k].description}</td></tr>;
 		});
 
 	  return (
@@ -63,9 +72,18 @@ class Evaluation extends React.Component {
       	<div className="col-md-8 col-md-offset-2 evaluation">
 	      	<table className="table">
 		      	<tbody>
-		      		{evalCompanyName}
-		      		{evalOpportunityDetails}
-		      		{(this.state.uploadStatus === "pending") && <div>Upload pending</div>}
+		      		<tr>
+		      			<th className="company-name">{this.props.evaldetails}
+		      			</th>
+		      		</tr>
+		      		<tr>
+		      			<th className="company-name">{org.name}</th>
+		      		</tr>
+		      		<tr>
+		      			<td className="position-names">{evaluation.position}
+		      			</td>
+		      		</tr>
+		      		{positionDetails}
 		      	</tbody>
       		</table>
       		<div className="file-select">
@@ -83,10 +101,19 @@ class Evaluation extends React.Component {
 							</div>
 						</form>
       		</div>
+      		{(this.state.uploadStatus === "pending") && <div>{alertPending}</div>}
+      		{(this.state.uploadStatus === "success") && <div>{alertSuccess}</div>}
+      		{(this.state.uploadStatus === "failed") && <div>{alertFail}</div>}
       	</div>
       </div>
 	  );
 	}
 }
 
-export default Evaluation;
+function select(state) {
+  return {
+    evalDetails: state.evalDetails
+  };
+}
+
+export default connect(select)(Evaluation);

@@ -83,7 +83,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 260px;
+  height: 280px;
 }
 
 .auth {
@@ -92,7 +92,6 @@
 
 .signup-container {
 	padding: 0px;
-	/* padding: 20px 30px 20px 30px; */
 	background: rgb(255,255,255);
 	border-radius: 10px;
 	border: 1px solid rgb(194,199,208);
@@ -101,5 +100,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 400px;
+  height: 420px;
+}
+
+.errormsg {
+	text-align: center;
 }
