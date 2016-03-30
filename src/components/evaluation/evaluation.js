@@ -40,6 +40,7 @@ class Evaluation extends React.Component {
 	}
 
 	render() {
+		if (!this.props.evaluation) return <div/>;
 
 		const alertPending = (
 		  <Alert bsStyle="info">
@@ -63,9 +64,11 @@ class Evaluation extends React.Component {
 		const org = this.props.orgs[this.props.companyID]
 		const evaluation = _.find(org.opportunities, {_id: this.props.evalID});
 
-		const positionDetails = Object.keys(evalDetails).map((k) => {
-			return <tr key={evalDetails[k]}><td>{evalDetails[k].description}</td></tr>;
-		});
+		/*const positionDetails = Object.keys(evalDetails).map((k) => {
+			if (k === this.props.evalID) {
+				return <tr key={evalDetails[k]}><td>{evalDetails[k].description}</td></tr>;
+			}
+		});*/
 
 	  return (
       <div className="row">
@@ -83,7 +86,11 @@ class Evaluation extends React.Component {
 		      			<td className="position-names">{evaluation.position}
 		      			</td>
 		      		</tr>
-		      		{positionDetails}
+		      		<tr>
+		      			<td>
+		      				{this.props.evaluation.description}
+		      			</td>
+		      		</tr>
 		      	</tbody>
       		</table>
       		<div className="file-select">
@@ -110,9 +117,10 @@ class Evaluation extends React.Component {
 	}
 }
 
-function select(state) {
+function select(state, props) {
   return {
-    evalDetails: state.evalDetails
+    evalDetails: state.evalDetails,
+    evaluation: state.evalDetails[props.evalID]
   };
 }
 

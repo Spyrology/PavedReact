@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../header/header';
-import Auth from '../auth/auth';
+import LogIn from '../auth/login';
 
 class Home extends React.Component {
 	render() {

@@ -82,15 +82,20 @@ export function signUpUser(firstname, lastname, email, password, confirmpassword
 	};
 }
 
+let i = 0
 export function checkPaymentAndGetEval(companyID, evalID) {
+	let j = ++i
 	return dispatch => {
 		dispatch({
 			type: HAS_PURCHASED,
 			hasPurchased: paymentstatus.PENDING,
 			evalID: evalID
 		});
+		console.log("sending request", j)
+		console.trace(j)
 		return Auth.checkPaymentAndGetEval(companyID, evalID).then(
 			(res) => {
+				console.log("received", j, res.data);
 				dispatch({
 				 	type: HAS_PURCHASED,
 				  hasPurchased: res.data.hasPurchased ? paymentstatus.HAS_PAID : paymentstatus.NOT_PAID,
@@ -112,13 +117,15 @@ export function submitPayment(token, companyID, evalID) {
 			(res) => {
 				if (res.data.success === false) {
 					return {success: false}
+				} else {
+					dispatch({
+					 	type: HAS_PURCHASED,
+					  hasPurchased: res.data.hasPurchased ? paymentstatus.HAS_PAID : paymentstatus.NOT_PAID,
+					  evalID: evalID
+					});
+					return { success: true };
 				}
-				dispatch({
-				 	type: HAS_PURCHASED,
-				  hasPurchased: res.data.hasPurchased ? paymentstatus.HAS_PAID : paymentstatus.NOT_PAID,
-				  evalID: evalID
-				});
-			}	
+			}
 		);
 	}
 }
