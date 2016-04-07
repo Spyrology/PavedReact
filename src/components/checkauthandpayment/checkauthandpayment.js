@@ -22,10 +22,6 @@ class CheckAuthAndPayment extends React.Component {
     }
   }
 
-  /*shouldComponentUpdate(nextProps, nextState) {
-    return !shallowEqual(this.state.props, nextState.props);
-  }*/
-
   render() {
     var companyID = this.props.params.companyID;
     var evalID = this.props.params.id;

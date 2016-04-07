@@ -64,12 +64,6 @@ class Evaluation extends React.Component {
 		const org = this.props.orgs[this.props.companyID]
 		const evaluation = _.find(org.opportunities, {_id: this.props.evalID});
 
-		/*const positionDetails = Object.keys(evalDetails).map((k) => {
-			if (k === this.props.evalID) {
-				return <tr key={evalDetails[k]}><td>{evalDetails[k].description}</td></tr>;
-			}
-		});*/
-
 	  return (
       <div className="row">
       	<div className="col-md-8 col-md-offset-2 evaluation">
