@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Auth from '../auth/auth';
 import Evaluation from '../evaluation/evaluation';
 import PaymentForm from '../payment-form/payment-form';
 import { checkPaymentAndGetEval, paymentstatus } from '../../actions/actions';
@@ -14,7 +13,7 @@ class CheckAuthAndPayment extends React.Component {
 
   componentWillMount() {
     if (!this.props.isUserLoggedIn) {
-      this.props.history.pushState({redirectURL: this.props.location.pathname}, "/auth");
+      this.props.history.pushState({redirectURL: this.props.location.pathname}, "/login");
     }
     else if (!this.props.hasUserPurchased) {
       var companyID = this.props.params.companyID;

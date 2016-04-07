@@ -10,14 +10,23 @@ class Header extends React.Component {
   	return (
   		<div className="row">
 	  		<nav className="navbar navbar-custom">
+	  		<div className="col-md-6">
 					<ul>
-						<li className="col-md-6 navbar-left">
-							<IndexLink to='/'><span className="navbar-brand">PAVED</span></IndexLink>
-						</li>
-						<li className="col-md-6 navbar-right">
-							<Link to='/opportunities'><span className="navbar-nav">OPPORTUNITIES</span></Link>
+						<li>
+							<IndexLink to='/'><div className="navbar-left"><img src='/images/paved.png' alt="PAVED" /></div></IndexLink>
 						</li>
 					</ul>
+				</div>
+				<div className="col-md-6 navbar-right">
+					<ul>
+						<li>
+							<Link to='/opportunities'><span className="navbar-nav">JOB SEEKERS</span></Link>
+						</li>
+						<li>
+							<span className="navbar-nav">EMPLOYERS</span>
+						</li> 
+					</ul>
+				</div>
 				</nav>
 			</div>
   	);

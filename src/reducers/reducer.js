@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { Map } from 'immutable';
-import { TOGGLE_DETAILS, USER_AUTH, CLOSE_ALL_DETAILS, HAS_PURCHASED, EVAL_DETAILS } from '../actions/actions';
+import { LOAD_OPPS, TOGGLE_DETAILS, USER_AUTH, CLOSE_ALL_DETAILS, HAS_PURCHASED, EVAL_DETAILS } from '../actions/actions';
 
 const initialState = {
-	opps: [],
+	opps: {},
 	showDetails: [],
 	isAuth: undefined,
 	hasPurchased: {},
@@ -12,10 +12,12 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-  case 'LOAD_OPPS':
+  case LOAD_OPPS:
 		return {
 			...state,
-			opps: action.data
+			opps: action.data.reduce((acc, item) => {
+				return {...acc, [item._id]: item}
+			}, {})
 		};
   case TOGGLE_DETAILS:
   	return {
@@ -44,7 +46,7 @@ export default function(state = initialState, action) {
 	  return {
 	    ...state,
 	    evalDetails: {
-	    	...state.hasPurchased,
+	    	...state.evalDetails,
 	    	[action.evalID]: action.evalDetails
 	    }
 	  };

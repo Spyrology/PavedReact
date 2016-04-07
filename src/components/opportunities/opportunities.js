@@ -2,13 +2,14 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { toggleDetails, setDetails, closeAllDetails } from '../../actions/actions'
 import DetailsModal from '../details-modal/details-modal';
+import { Table } from 'react-bootstrap';
 
 class Opportunities extends React.Component {
   constructor(){
     super();
 
     this.onClick = (id) => {
-      this.props.dispatch(toggleDetails(id))
+      this.props.dispatch(toggleDetails(id));
     }
 
     this.onCloseModal = () => {
@@ -26,15 +27,17 @@ class Opportunities extends React.Component {
       oppList.push(<tr key={this.props.org.opportunities[k]._id + this.props.org.opportunities[k].position}><td className="position-names" onClick={ () => this.onClick(oppId)}>{this.props.org.opportunities[k].position}</td><td className="status">{this.props.org.opportunities[k].status}</td></tr>
       );
       if (isOpen) {
-        oppList.push(<DetailsModal key={this.props.org.opportunities[k]._id} org={this.props.org} showDetails={isOpen} details={this.props.org.opportunities[k]} callbackParent={this.onCloseModal} />
+        oppList.push(<tr key={this.props.org.opportunities[k]._id + this.props.org.opportunities[k].position + 'modal'}><td><DetailsModal key={this.props.org.opportunities[k]._id} org={this.props.org} showDetails={isOpen} details={this.props.org.opportunities[k]} callbackParent={this.onCloseModal} /></td></tr>
         );
       }
     });
 
     return (
+      <Table>
       <tbody>
         {oppList}
       </tbody>
+      </Table>
     );
   }
 }
