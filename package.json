@@ -15,7 +15,7 @@
   "author": "Spyros Karidis",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.7.0",
+    "axios": "^0.19.0",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "history": "^1.12.5",
