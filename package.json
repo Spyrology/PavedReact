@@ -36,7 +36,7 @@
     "babelify": "^6.3.0",
     "browser-sync": "^2.9.11",
     "browserify": "^11.2.0",
-    "node-sass": "^3.3.3",
+    "node-sass": "^4.14.1",
     "redux-devtools": "^3.0.2",
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.2",
